@@ -1,0 +1,41 @@
+<div class="container">
+  <div ng-show="menuMyInfoCtrl.isRegUser">
+    <div class="row">
+      <div class="col-md-7">
+        <label>First Name:</label>
+        <span>{{ menuMyInfoCtrl.user.firstname }}</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-7">
+        <label>Surname:</label>
+        <span>{{ menuMyInfoCtrl.user.surname }}</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-7">
+        <label>E-mail:</label>
+        <span>{{ menuMyInfoCtrl.user.email }}</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-7">
+        <label>Phone:</label>
+        <span>{{ menuMyInfoCtrl.user.phone }}</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-7">
+        <label>Favorite Menu:</label>
+        <span>{{ menuMyInfoCtrl.user.favoritemenu }}</span>
+      </div>
+    </div>
+  </div>
+  <div ng-show="!menuMyInfoCtrl.isRegUser">
+    <div class="row">
+      <div class="col-md-7">
+        <a ui-sref="public.menusignup">Sign Up Now</a>
+      </div>
+    <div>
+  </div>
+</div>

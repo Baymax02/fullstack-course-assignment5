@@ -1,0 +1,65 @@
+<div class="container">
+  <h2 class ="sign-up-title" class="text-center">Sign Up</h2>
+
+  <fieldset class="sign-up">
+    <form name='signupForm'>
+     <div class="row">
+        <div class="col-md-5">
+          <input type="text" name="firstname" placeholder="First Name" value="jee"
+            ng-model="menuSignUpCtrl.user.firstname"
+            required >
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5">
+          <input type="text" name="surname" placeholder="Surname" value="lee"
+          ng-model="menuSignUpCtrl.user.surname"
+          required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5">
+          <input type="text" name="email" placeholder="E-mail"
+          ng-model="menuSignUpCtrl.user.email"
+          required>
+          <span ng-if="signupForm.email.$invalid && signupForm.email.$touched">
+            Must be a valid email address: handle@domain format
+          </span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5">
+          <input type="text" name="phone" placeholder="Phone ###-###-####"
+          ng-model="menuSignUpCtrl.user.phone"
+          pattern="(\d{3})-(\d{3})-(\d{4})"
+          required>
+          <span ng-if="signupForm.phone.$invalid && signupForm.phone.$touched">
+            Phone must be in the format ###-###-####.
+          </span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5">
+          <input type="text" name="favoritemenu" placeholder="Favorite Dish"
+          ng-model="menuSignUpCtrl.user.favoritemenu"
+          required>
+          <span ng-show="menuSignUpCtrl.saveuserinfo">
+            Your information has been saved.
+          </span>
+          <span ng-show="menuSignUpCtrl.invalidmenu">
+            No such menu number exists
+          </span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5">
+            <button
+             ng-disabled="signupForm.$invalid"
+             ng-click="menuSignUpCtrl.submit();">Submit</button>
+        </div>
+      </div>
+    </form>
+  </fieldset>
+
+</div>
